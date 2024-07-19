@@ -1,0 +1,105 @@
+/* src/assets/css/contact.css */
+
+#hero-img {
+  height: 60vh;
+  width: 100%;
+  background: url('/public/img/skatepark.jpg') no-repeat center center;
+  background-attachment: fixed; /* This creates the parallax effect */
+  background-size: cover;
+  box-shadow: 0px 8px 20px 6px rgba(0, 0, 0, 0.2);
+  margin-bottom: 50px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*-----------for contact form---------- */
+
+.container {
+  max-width: 900px;
+  margin: 160px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 300px;
+  animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.container h2 {
+  text-align: center;
+  font-size: 41px;
+  color: #333;
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: #30d7e3;
+  box-shadow: 0 0 8px rgba(48, 215, 227, 0.5);
+}
+
+.input-group textarea {
+  height: 100px;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #30d7e3;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+  background-color: #0b84e0;
+  transform: scale(1.05);
+}
+
+#successMessage {
+  text-align: center;
+  margin-top: 20px;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+  padding: 10px;
+  border-radius: 5px;
+  animation: fadeIn 0.5s ease-in-out;
+}

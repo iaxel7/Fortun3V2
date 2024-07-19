@@ -1,0 +1,79 @@
+/* src/assets/css/product.css */
+
+.hcont {
+    height: 55vh;
+    width: 100%;
+    background-image: url('/public/img/groupskaters.jpg'); /* Corrected path */
+    background-size: cover;
+    position: relative;
+    z-index: -2;
+    margin-bottom: 100px;
+    box-shadow: 3px 3px 10px black;
+  }
+  
+  .shopnow {
+    position: absolute;
+    left: 38%;
+    top: 35%;
+    font-size: 3rem;
+    padding: 30px;
+    border: 11px solid;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 150px;
+  }
+  
+  .product-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+    border-radius: 15px;
+  }
+  
+  .product-item:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+  }
+  
+  .product-item img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .filter-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .filter {
+    margin: 0 10px;
+  }
+
+  select{
+    border-radius: 30px;
+    margin: 10px;
+    padding: 5px;
+  }
+.product-item a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/*------styling for products-----*/
+  @media (max-width: 800px) {
+    .shopnow {
+      position: absolute;
+      left: 50%;
+      top: 40%;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+    }
+  }
+  

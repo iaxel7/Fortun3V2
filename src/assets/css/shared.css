@@ -1,0 +1,153 @@
+/* src/assets/css/shared.css */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* -----------NavBar Code----------------- */
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: aliceblue;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  height: 100px;
+  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Bring the navbar to the front */
+}
+
+.navbar a {
+  text-decoration: none;
+  color: inherit;
+  padding-right: 20px;
+}
+
+.logo {
+  margin-right: 50px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 40px;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+  margin-right: 150px;
+}
+
+.list li:hover {
+  transform: scale(1.2);
+}
+
+#toggler,
+.navbar label {
+  display: none;
+}
+
+.menu-icon {
+  display: none; /* Hide menu icon by default */
+  cursor: pointer;
+  font-size: 24px;
+  line-height: 24px;
+  margin: 10px;
+  color: #000;
+}
+
+/*-------------- Mobile Navbar ----------*/
+
+@media only screen and (max-width: 800px) {
+  .menu {
+    display: none; /* Hide menu by default */
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    background-color: aliceblue;
+  }
+
+  .navbar label {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  #toggler {
+    display: none;
+  }
+
+  #toggler:checked + .menu-icon + .menu {
+    display: flex; /* Show menu when toggler is checked */
+  }
+
+  .hero-carousel {
+    z-index: -1;
+  }
+
+  .ftrmain {
+    flex-direction: column;
+  }
+}
+
+/* -------footer code --------*/
+
+footer {
+  background-color: #141414;
+  color: #ffffff;
+  padding: 4rem 1rem;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #cccccc;
+}
+
+.ftrcont {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ftrmain {
+  display: flex;
+  margin-bottom: 4rem;
+}
+
+.ftrcolumn {
+  flex-basis: 200px;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.ftrheading {
+  margin-bottom: 1rem;
+}
+
+footer-link {
+  display: block;
+  width: max-content;
+  padding: 5px 10px;
+  margin: 0 auto;
+}
+
+.ftrbottom {
+  display: flex;
+}
+
+.copyright {
+  margin-right: auto;
+}
+
+.footer-social {
+  font-size: 20px;
+  margin-left: 2rem;
+}
