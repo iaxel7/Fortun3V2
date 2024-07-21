@@ -7,9 +7,9 @@ require('dotenv').config(); // Load environment variables from .env file
 
 // Create an Express application
 const app = express();
-const PORT = 8080; // Ensure the port is not blocked
+const PORT = process.env.PORT || 8080; //common port used for web servers
 
-// Create a MySQL database connection using environment variables
+// Create a sql connection with .env file 
 const db = mysql.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
@@ -18,7 +18,7 @@ const db = mysql.createConnection({
   port: process.env.DB_PORT
 });
 
-// Connect to the MySQL database
+// Connect to the MySQL
 db.connect(err => {
   if (err) {
     console.error('Error connecting to MySQL database:', err);
@@ -30,8 +30,11 @@ db.connect(err => {
 // Use CORS to allow requests from different origins
 app.use(cors());
 
-// Use body-parser to parse JSON bodies for this app
+// Use body-parser to parse JSON bodies
 app.use(bodyParser.json());
+
+// Serve static files from the React app after build 
+app.use(express.static(path.join(__dirname, '../public/build')));
 
 // Serve static files (images) from the "uploads" directory
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
@@ -68,6 +71,11 @@ app.get('/api/products/:id', (req, res) => {
     console.log('Product fetched:', result[0]);
     res.json(result[0]);
   });
+});
+
+// Catch-all handler to serve the React app for any request that doesn't match an API route
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/build/index.html'));
 });
 
 // Start the Express server

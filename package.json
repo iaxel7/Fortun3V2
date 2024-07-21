@@ -18,10 +18,13 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "node server/server.js",
+    "client": "npm start --prefix client",
+    "server": "nodemon server/server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "npm run build --prefix client",
+    "install-server": "npm install --prefix server",
+    "install-client": "npm install --prefix client"
   },
   "eslintConfig": {
     "extends": [
