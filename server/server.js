@@ -7,9 +7,9 @@ require('dotenv').config(); // Load environment variables from .env file
 
 // Create an Express application
 const app = express();
-const PORT = process.env.PORT || 8080; //common port used for web servers
+const PORT = process.env.PORT || 8080; // Common port used for web servers
 
-// Create a sql connection with .env file 
+// Create a MySQL connection using .env file
 const db = mysql.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
@@ -33,8 +33,8 @@ app.use(cors());
 // Use body-parser to parse JSON bodies
 app.use(bodyParser.json());
 
-// Serve static files from the React app after build 
-app.use(express.static(path.join(__dirname, '../public/build')));
+// Serve static files from the React app after build
+app.use(express.static(path.join(__dirname, '../build')));
 
 // Serve static files (images) from the "uploads" directory
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
@@ -75,7 +75,7 @@ app.get('/api/products/:id', (req, res) => {
 
 // Catch-all handler to serve the React app for any request that doesn't match an API route
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/build/index.html'));
+  res.sendFile(path.join(__dirname, '../build/index.html'));
 });
 
 // Start the Express server
