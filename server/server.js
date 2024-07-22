@@ -1,5 +1,5 @@
 const express = require('express');
-const mysql = require('mysql2');
+const mysql = require('mysql2/promise'); // Using promise version of mysql2
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const path = require('path');
@@ -9,22 +9,16 @@ require('dotenv').config(); // Load environment variables from .env file
 const app = express();
 const PORT = process.env.PORT || 8080; // Common port used for web servers
 
-// Create a MySQL connection using .env file
-const db = mysql.createConnection({
+// Create a MySQL connection pool using .env file
+const pool = mysql.createPool({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
-  port: process.env.DB_PORT
-});
-
-// Connect to the MySQL
-db.connect(err => {
-  if (err) {
-    console.error('Error connecting to MySQL database:', err);
-    return;
-  }
-  console.log('MySQL connected...');
+  port: process.env.DB_PORT,
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0
 });
 
 // Use CORS to allow requests from different origins
@@ -40,29 +34,26 @@ app.use(express.static(path.join(__dirname, '../build')));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Define a route to get all products
-app.get('/api/products', (req, res) => {
+app.get('/api/products', async (req, res) => {
   const sql = 'SELECT * FROM products';
-  db.query(sql, (err, result) => {
-    if (err) {
-      console.error('Error fetching products:', err);
-      res.status(500).json({ error: 'Failed to fetch products' });
-      return;
-    }
+  try {
+    console.log('Fetching all products...');
+    const [result] = await pool.query(sql);
+    console.log('Products fetched:', result);
     res.json(result);
-  });
+  } catch (err) {
+    console.error('Error fetching products:', err);
+    res.status(500).json({ error: 'Failed to fetch products' });
+  }
 });
 
 // Define a route to get a product by ID
-app.get('/api/products/:id', (req, res) => {
+app.get('/api/products/:id', async (req, res) => {
   const { id } = req.params;
-  console.log(`Fetching product with ID: ${id}`);
   const sql = 'SELECT * FROM products WHERE id = ?';
-  db.query(sql, [id], (err, result) => {
-    if (err) {
-      console.error('Error fetching product:', err);
-      res.status(500).json({ error: 'Failed to fetch product' });
-      return;
-    }
+  try {
+    console.log(`Fetching product with ID: ${id}`);
+    const [result] = await pool.query(sql, [id]);
     if (result.length === 0) {
       console.log('Product not found');
       res.status(404).json({ error: 'Product not found' });
@@ -70,7 +61,10 @@ app.get('/api/products/:id', (req, res) => {
     }
     console.log('Product fetched:', result[0]);
     res.json(result[0]);
-  });
+  } catch (err) {
+    console.error('Error fetching product:', err);
+    res.status(500).json({ error: 'Failed to fetch product' });
+  }
 });
 
 // Catch-all handler to serve the React app for any request that doesn't match an API route
