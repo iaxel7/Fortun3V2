@@ -24,7 +24,9 @@
     "client": "react-scripts start",
     "server": "nodemon server/server.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "install-server": "npm install --prefix server",
+    "install-client": "npm install --prefix client"
   },
   "engines": {
     "node": "14.x"
