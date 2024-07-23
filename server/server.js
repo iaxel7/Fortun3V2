@@ -20,7 +20,6 @@ const pool = mysql.createPool({
   connectionLimit: 10,
   queueLimit: 0,
   connectTimeout: 10000, // 10 seconds
-  acquireTimeout: 10000, // 10 seconds
 });
 
 // Use CORS to allow requests from different origins
