@@ -23,7 +23,10 @@ const pool = mysql.createPool({
 });
 
 // Use CORS to allow requests from different origins
-app.use(cors());
+app.use(cors({
+  origin: '*', 
+}));
+
 
 // Use body-parser to parse JSON bodies
 app.use(bodyParser.json());
