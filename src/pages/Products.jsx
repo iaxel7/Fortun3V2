@@ -11,7 +11,7 @@ const Products = () => {
   const [typeFilter, setTypeFilter] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:8080/api/products')
+    fetch('https://fortun3v2.onrender.com/api/products')
       .then(response => response.json())
       .then(data => {
         console.log('Fetched products:', data);
@@ -44,8 +44,8 @@ const Products = () => {
   return (
     <>
       <Navbar />
-      <div className = "hcont">
-        <div className = "shopnow">Shop Now</div>
+      <div className="hcont">
+        <div className="shopnow">Shop Now</div>
       </div>
       <div className="filter-container">
         <div className="filter">
@@ -84,5 +84,4 @@ const Products = () => {
 };
 
 export default Products;
-
 

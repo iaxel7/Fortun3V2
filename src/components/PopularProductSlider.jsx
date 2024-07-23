@@ -1,9 +1,6 @@
-// src/components/PopularProductsSlider.jsx
-
 import '../assets/css/home.css';
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
-
 
 const PopularProductsSlider = ({ products }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -33,7 +30,7 @@ const PopularProductsSlider = ({ products }) => {
               }`}
             >
               <div className="product-item">
-                <img src={`http://localhost:8080/${product.image}`} alt={product.title} />
+                <img src={`https://fortun3v2.onrender.com/${product.image}`} alt={product.title} />
                 <h3>{product.title}</h3>
                 <p>{product.description}</p>
                 <p>{product.price}</p>

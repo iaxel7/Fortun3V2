@@ -11,16 +11,18 @@ const Home = () => {
   const [popularProducts, setPopularProducts] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8080/api/products')
+    console.log('Fetching popular products...');
+    fetch('https://fortun3v2.onrender.com/api/products')
       .then(response => response.json())
       .then(data => {
         // Select 12 random products
-        const shuffled = data.sort(() => 0.12 - Math.random());
+        const shuffled = data.sort(() => 0.5 - Math.random());
         const selected = shuffled.slice(0, 12);
         setPopularProducts(selected);
-      });
+      })
+      .catch(error => console.error('Error fetching products:', error));
   }, []);
-
+  
   return (
     <>
       <Navbar />

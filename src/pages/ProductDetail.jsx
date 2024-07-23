@@ -14,7 +14,7 @@ const ProductDetail = () => {
 
   useEffect(() => {
     console.log('Fetching product with ID:', id); // Log the ID being fetched
-    fetch(`http://localhost:8080/api/products/${id}`)
+    fetch(`https://fortun3v2.onrender.com/api/products/${id}`)
       .then(response => {
         if (!response.ok) {
           console.error(`Network response was not ok: ${response.statusText}`);
@@ -46,7 +46,7 @@ const ProductDetail = () => {
       <Navbar />
       <div className="content">
         <div className="product-detail">
-          <img src={`http://localhost:8080/${product.image}`} alt={product.title} />
+          <img src={`https://fortun3v2.onrender.com/${product.image}`} alt={product.title} />
           <div className="product-info">
             <h2>{product.title}</h2>
             <p>{product.description}</p>
