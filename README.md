@@ -1,70 +1,52 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
+# Fortun3 Skate Shop
+Welcome to Fortun3 Skate Shop! Explore our curated selection of skateboards, apparel, and accessories, and stay updated with the latest trends in skate culture.
+## Table of Contents
+[About Us]
+[Features]
+[Installation]
+[Usage]
+[Pages]
+[Contact]
 
-## Available Scripts
 
-In the project directory, you can run:
+## About Us
+Fortun3 Skate Shop is your one-stop destination for everything skateboarding. We offer a diverse range of products to meet the needs of beginners and seasoned skaters alike. Our mission is to provide high-quality gear and support the skateboarding community with passion and dedication.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
+**Product Page**:  Browse through 12 hand-picked products, including skateboards, wheels, and apparel.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**Home Page**:  Discover the latest collections and featured products with a dynamic slider.
 
-### `npm test`
+**Contact Page**:  Reach out to us with any questions or feedback using our contact form with JavaScript validation.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Responsive Design**:  Enjoy a seamless experience across all devices, thanks to our mobile-friendly design.
 
-### `npm run build`
+**Navigation Bar and Footer**:  Easily access various sections and connect with us on social media.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Installation
+To run the website locally, follow these steps:
+Clone the repository:
+   ```bash
+   git clone https://github.com/iaxel7/Fortun3V2.git
+   ```
+Navigate to the project directory:
+   ```bash
+   cd Fortun3V2
+   ```
+Open `index.html` in your preferred web browser.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Usage
+**Home Page**: Check out the featured products and navigate through the image slider.
+**Product Page**: View detailed information about our products, including prices and specifications.
+**Contact Page**: Fill out the form to get in touch with us for inquiries or support.
+## Pages
+**Home Page**: Introduction to our shop, with a focus on featured collections.
+**Product Page**: Detailed listings of our available products.
+**Contact Page**: Simple form to send us a message or ask questions.
